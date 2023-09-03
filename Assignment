@@ -1,0 +1,260 @@
+Question 1:
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+     int n, num, digit, rev = 0;
+
+     cout << "Enter a positive number: ";
+     cin >> num;
+
+     n = num;
+
+     do
+     {
+         digit = num % 10;
+         rev = (rev * 10) + digit;
+         num = num / 10;
+     } while (num != 0);
+
+     cout << " The reverse of the number is: " << rev << endl;
+
+     if (n == rev)
+         cout << " The number is a palindrome.";
+     else
+         cout << " The number is not a palindrome.";
+
+    return 0;
+}
+
+Question-2:
+
+# include <iostream>
+using namespace std;
+
+int main() {
+
+  char operand;
+  float num1, num2;
+
+  cout << "Enter operand: +, -, *, /: ";
+  cin >> operand;
+
+  cout << "Enter two operator: ";
+  cin >> num1 >> num2;
+
+  switch(operand) {
+
+    case '+':
+      cout << num1 << " + " << num2 << " = " << num1 + num2;
+      break;
+
+    case '-':
+      cout << num1 << " - " << num2 << " = " << num1 - num2;
+      break;
+
+    case '*':
+      cout << num1 << " * " << num2 << " = " << num1 * num2;
+      break;
+
+    case '/':
+      cout << num1 << " / " << num2 << " = " << num1 / num2;
+      break;
+
+    default:
+      // If the operanderator is other than +, -, * or /, error message is shown
+      cout << "Error! operator is not correct";
+      break;
+  }
+
+  return 0;
+}
+
+
+Question 3:
+#include <iostream>
+using namespace std;
+
+int binaryToDecimal(int n)
+{
+	int num = n;
+	int decimal = 0;
+	int base = 1;
+
+	int temp = num;
+	while (temp) {
+		int last = temp % 10;
+		temp = temp / 10;
+
+		decimal += last * base;
+
+		base = base * 2;
+	}
+
+	return decimal;
+}
+int main()
+{
+	int num;
+	cout << "Enter a binary number: ";
+    cin >> num;
+	cout << binaryToDecimal(num) << endl;
+}
+
+Question 4:
+#include <iostream>
+using namespace std;
+int digit,num,rev;
+int reverse(int num){
+    do{
+        digit=num%10;
+        rev=(rev*10)+digit;
+        num=num/10;    
+    }while(num!=0);
+    
+    return rev;
+}
+
+int main(){
+    int num;
+    cout<<"Enter a number to reverse it:";
+    cin>>num;
+    cout<<reverse(num);
+}
+
+Question-5:
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    char ch;
+    cout << "Enter any character:";
+    cin >> ch;
+
+    // Alphabet checking condition
+    if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+    {
+        cout << ch << " is an Alphabet";
+    }
+    else if(ch >= '0' && ch <= '9')
+    {
+        cout << ch << " is a Digit";
+    }
+    else
+    {
+        cout << ch << " is a Special Character";
+    }
+    return 0;
+}
+
+Question-6:
+#include<iostream>
+using namespace std;
+
+int main(){
+    int a,b;
+    cin>>a>>b;
+    a=a+b;
+    b=a-b;
+    a=a-b;
+    
+    cout<<a<<" "<<b;
+    
+    return 0;
+    
+}
+
+Question-7:
+#include<iostream>
+using namespace std;
+int main()
+{
+    int matOne[3][3], matTwo[3][3], matThree[3][3];
+    int i, j, k, sum=0;
+    cout<<"Enter 9 Elements for First Matrix: ";
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+            cin>>matOne[i][j];
+    }
+    cout<<"\nEnter 9 Elements for Second Matrix: ";
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+            cin>>matTwo[i][j];
+    }
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+        {
+            sum=0;
+            for(k=0; k<3; k++)
+                sum = sum + (matOne[i][k] * matTwo[k][j]);
+            matThree[i][j] = sum;
+        }
+    }
+    cout<<"\nMultiplication Result:\n";
+    for(i=0; i<3; i++)
+    {
+        for(j=0; j<3; j++)
+            cout<<matThree[i][j]<<"\t";
+        cout<<endl;
+    }
+    cout<<endl;
+    return 0;
+}
+
+
+Question-8:
+
+A)
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int rows;
+
+    cout << "Enter number of rows: ";
+    cin >> rows;
+
+    for(int i = 1; i <= rows; ++i) {
+        for(int j = 1; j <= i; ++j) {
+            cout << '*' << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+
+B)
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int i,j,k,n;
+    cin>>n;
+   for(i=1;i<=n;++i)
+  
+{
+  for(j=1;j<=n-i;++j)
+{
+  cout<<"  ";
+}
+for( k=i,j=n-i;j<n;++j,--k)
+{
+cout<<k<<" ";
+}
+for(k=2,j=n;j<n+i-1;++j,++k)
+{
+  cout<<k<<" ";
+}
+cout<<endl;
+}
+return 0;
+}
