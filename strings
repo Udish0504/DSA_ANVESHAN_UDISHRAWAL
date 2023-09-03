@@ -1,0 +1,200 @@
+Question 1:
+#include <iostream>
+#include <string>
+using namespace std;
+
+string reverse_string(string str) {
+	string temp = str;
+	int index = 0;
+
+	for (int x = temp.length()-1; x >= 0; x--)
+	{
+		str[index] = temp[x];
+		index++;
+	}
+	return str;
+}
+
+int main() 
+{
+	cout << "Udish Rawal "; 
+	cout << reverse_string("Udish Rawal");
+
+	return 0;
+}
+
+Question:2
+#include <iostream>
+#include <string>
+using namespace std;
+string change_letter(string str) {
+	int character;
+	
+	for (int x = 0; x < str.length(); x++)
+	{
+		character = int(str[x]);
+
+		if (character == 122)
+		{
+			str[x] = char(97);
+		}
+		else if (character == 90)
+		{
+			str[x] = char(65);
+		}
+		else if (character >= 65 && character <= 90 || character >= 97 && character <= 122)
+		{
+			str[x] = char(character + 1);
+		}
+	}
+	return str;
+}
+
+int main() 
+{
+	cout << "Udish Rawal"; 
+	cout << "\nNew string: " << change_letter("Udish rawal");
+	return 0;
+}
+
+Question:3
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string Capitalize_first_letter(string text) {
+
+	for (int x = 0; x < text.length(); x++)
+	{
+		if (x == 0)
+		{
+			text[x] = toupper(text[x]);
+		}
+		else if (text[x - 1] == ' ')
+		{
+			text[x] = toupper(text[x]);
+		}
+	}
+
+	return text;
+}
+
+int main() 
+{
+	cout << Capitalize_first_letter("hello my name is udish rawal");
+
+	return 0;
+}
+
+Question:4
+#include <iostream>
+
+using namespace std;
+
+string test_Palindrome(string text) {
+  string str1, str2;
+  int str_len = int(text.size());
+  for (int i = 0; i < str_len; i++){
+    if((text[i] >= 'a' && text[i] <= 'z' ) || (text[i] >= 'A' && text[i] <= 'Z' ))
+      str1+=tolower(text[i]);
+    if((text[str_len-1-i] >= 'a' && text[str_len-1-i] <= 'z' ) || (text[str_len-1-i] >= 'A' && text[str_len-1-i] <= 'Z' ))
+      str2+=tolower(text[str_len-1-i]);
+  }
+
+  if (str1 == str2)
+    return "True";
+  return "False";
+
+}
+
+int main() {
+  cout << "Is madam a Palindrome? " << test_Palindrome("madam");
+  cout << "\nIs racecar a Palindrome? " << test_Palindrome("racecar");
+  cout << "\nIs abc a Palindrome? " << test_Palindrome("abc");
+  return 0;
+
+}
+
+Question:5
+#include <iostream>
+#include <string>
+using namespace std;
+
+string change(string text) {
+
+	for (int x = 0; x < text.length(); x++)
+	{
+		if (isupper(text[x]))
+		{
+			text[x] = tolower(text[x]);
+		}
+		else
+		{
+			text[x] = toupper(text[x]);
+		}
+	}
+
+	return text;
+}
+
+int main() {
+
+	cout << "Udish Rawal ";
+	cout<<change("Udish Rawal");
+
+	return 0;
+}
+
+Question-6:
+#include <iostream>
+#include <string>
+
+using namespace std;
+int count=0;
+int sum(string text) {
+    for(int i=0;i<=text.length()-1;i++){
+        if(isdigit(text[i])){
+            count=count+text[i];
+            cout<<count<<"  ";
+        }
+        
+    }
+
+	
+
+	return count;
+}
+
+int main() {
+
+
+	cout<<sum("1a2b3c4");
+
+	return 0;
+}
+
+Question:7
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+int count=0;
+int sum(string text) {
+    for(int i=0;i<=text.length()-1;i++){
+        if(text[i]=='a'||text[i]=='e'||text[i]=='i'||text[i]=='o'||text[i]=='u'){
+            count++;
+        }
+        
+    }
+	return count;
+}
+
+int main() {
+
+
+	cout<<sum("udish");
+
+	return 0;
+}
